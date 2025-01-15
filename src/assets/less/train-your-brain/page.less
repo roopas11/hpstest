@@ -1,0 +1,264 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+    @import "../_common/phone-section.less";
+
+/*--------------------------------------------------*/
+/* Header adjustments                               */
+
+    .header .logo {
+        width: (100/@rem);
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+        @media (min-width: (@bp-medium)) {
+            & {
+                width: (390/@rem);
+                margin: 0 auto;
+            }
+        } // @media min @bp-medium
+    }
+
+/*--------------------------------------------------*/
+/* Consumer                                         */
+
+    .hero {
+        padding-top: (140/@rem);
+
+        .wrapper {
+            z-index: 2;
+            position: relative;
+        }
+
+        h1 {
+            font-size: (30/@rem);
+            margin: auto -(20/@rem) (30/@rem) 0;
+            letter-spacing: 20px; // See alignment issues with letter spacing: https://stackoverflow.com/questions/21612058/letter-spacing-wrong-text-center-alignment
+            text-shadow: 0 (3/@rem) (6/@rem) rgba(0,0,0,.16);
+        }
+
+        .copy {
+            margin: 0 auto (340/@rem);
+            max-width: (320/@rem);
+            font-size: (16/@rem);
+        }
+
+        .swiper,
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide {
+            display: flex;
+            width: 100%;
+        }
+
+            .person {
+                margin: auto auto 0;
+                height: (360/@rem);
+                z-index: 1;
+                position: relative;
+                width: 100%;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    max-width: none;
+                }
+
+            }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+            @media (min-width: (@bp-medium)) {
+                & {
+                    padding-bottom: (110/@rem);
+                    height: 100vh;
+                    min-height: (810/@rem);
+
+                    .wrapper {
+                        max-width: (1248/@rem);
+                    }
+
+                    h1 {
+                        letter-spacing: 33px;
+                        font-size: (50/@rem);
+                    }
+
+                    .copy {
+                        margin: 0 (60/@rem) 0 auto;
+                        max-width: (290/@rem);
+                        text-align: left;
+                    }
+
+                    .person {
+                        height: 90%;
+                        width: 56%;
+                        margin: auto 0 0;
+
+                        img {
+                            height: 100%;
+                            width: auto;
+                            top: auto;
+                            bottom: 0;
+                            left: auto;
+                            right: 0;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            } // @media min @bp-medium
+    }
+
+    /*--------------------------------------------------*/
+    /* Welcome                                          */
+
+        .welcome {
+            text-align: center;
+
+            h2 {
+                color: var(--peach);
+            }
+        }
+
+    /*--------------------------------------------------*/
+    /* Benefits                                         */
+
+        .benefits {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            
+            .benefit {
+                display: flex;
+                flex-direction: column;
+
+                .copy {
+                    padding: (40/@rem) 0;
+
+                    > *:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .profile {
+                        width: (200/@rem);
+                        height: (200/@rem);
+                        border-radius: 50%;
+                        border: solid 6px @white;
+                        margin-top: -(140/@rem);
+                    }
+
+                    h3 {
+                        color: var(--blue-darkest);
+                        margin: @base2 0;
+                    }
+
+                    p {
+                        max-width: (272/@rem);
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    .icon {
+                        margin: 0 auto;
+                    }
+
+                    .icon-worries {
+                        width: (110/@rem);
+                        height: (113/@rem);
+                    }
+                    .icon-sleep {
+                        width: (136/@rem);
+                        height: (107/@rem);
+                    }
+                    .icon-well-being {
+                        width: (145/@rem);
+                        height: (126/@rem);
+                    }
+                }
+
+                .bg {
+                    order: -1;
+                    width: 100%;
+                }
+            }
+
+            /*--------------------------------------------------*/
+            /* Min @bp-medium                                   */
+            
+            @media (min-width: (@bp-medium)) {
+                & {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    width: 100%;
+
+                    .benefit {
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        padding: (64/@rem) 0;
+                        height: 100vh;
+                        width: 100%;
+                        flex-shrink: 0;
+        
+                        &:not(:first-of-type) .copy {
+                            max-width: (406/@rem);
+                            padding: (48/@rem);
+                        }
+
+                        .copy {
+                            position: relative;
+                            background: rgba(255,255,255,.91);
+                            border-radius: (40/@rem);
+                            max-width: (587/@rem);
+                            padding: (40/@rem) (112/@rem);
+                            margin-left: auto;
+                            text-align: center;
+                            z-index: 1;
+
+                            .profile {
+                                width: (340/@rem);
+                                height: (340/@rem);
+                                border: none;
+                                margin: 0 auto;
+                            }
+                        }
+
+                        .bg,
+                        .bg img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            } // @media min @bp-medium
+
+        } // .benefits
+ 
+    /*--------------------------------------------------*/
+    /* Join                                              */
+
+        .section-join {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+
+            h3 {
+                color: var(--purple);
+            }
+        }

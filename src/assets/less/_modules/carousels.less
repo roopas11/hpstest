@@ -1,0 +1,25 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+
+/*--------------------------------------------------*/
+/* Carousels (uses Swiper Js)                       */
+
+    .swiper {
+        
+        .swiper-pagination {
+            position: static;
+            margin-top: (40/@rem);
+
+            .swiper-pagination-bullet {
+                background: @white;
+                opacity: .4;
+
+                &.swiper-pagination-bullet-active {
+                    opacity: 1;
+                }
+            }
+        }
+
+    }

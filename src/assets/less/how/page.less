@@ -1,0 +1,102 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+    @import "../_common/phone-section.less";
+    @import "../_common/testimonial-section.less";
+
+/*--------------------------------------------------*/
+/* How                                               */
+
+    .intro {
+        position: relative;
+        z-index: 2;
+        padding-bottom: 0;
+
+        h1 {
+            margin: 0 0 @base;
+        }
+    }
+
+    /*--------------------------------------------------*/
+    /* Sign Up                                          */
+
+        .sign-up {
+            position: relative;
+            z-index: 1;
+
+            .glow-blue {
+                width: (630/@rem);
+                height: (626/@rem);
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            /*--------------------------------------------------*/
+            /* Min @bp-medium                                   */
+            
+                @media (min-width: (@bp-medium)) {
+                    & {
+                        padding-bottom: (120/@rem);
+                    }
+                } // @media min @bp-medium
+        }
+
+    /*--------------------------------------------------*/
+    /* Coaches                                          */
+
+        .coaches {
+            padding: 0;
+            position: relative;
+            z-index: 1;
+
+            .video {
+                margin: 0 -(@padding);
+
+                img {
+                    width: 100%; // temp
+                    margin: 0;
+                    display: block;
+                }
+            }
+
+            .copy {
+                padding: (40/@rem) 0;
+            }
+
+            /*--------------------------------------------------*/
+            /* Min @bp-medium                                   */
+    
+                @media (min-width: (@bp-medium)) {
+
+                    & {
+                        padding: (60/@rem) 0;
+                    }
+
+                    .column {
+                        justify-content: space-between;
+
+                        .col {
+                            width: calc(50% - 8px);
+                        }
+
+                        & + .column {
+                            margin-top: (40/@rem);
+                        }
+
+                        .copy {
+                            padding: 0 0 0 (92/@rem);
+                        }
+
+                        &:nth-of-type(even) .copy {
+                            padding: 0 (92/@rem) 0 0;
+                        }
+                    }
+
+                    .video {
+                        margin: 0;
+                    }
+
+                } // @media min @bp-medium
+        }

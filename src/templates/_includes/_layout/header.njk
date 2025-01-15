@@ -1,0 +1,30 @@
+
+<div class="header">
+    <div class="wrapper">
+        {% if consumer %}
+            <a href="/train-your-brain" class="logo">
+                <picture>
+                    <source srcset="/_assets/svg/_global/consumer-logo.svg" media="(min-width: 760px)">
+                    <img src="/_assets/svg/_global/consumer-logo-mobile.svg" alt="HPS Brain Gym">
+                </picture>
+            </a>
+        {% else %}
+            <a href="/" class="logo">
+                <img src="/_assets/img/_global/logo.webp" alt="HPS Brain Gym">
+            </a>
+            <nav>
+                <a href="#" class="menu-toggle">
+                    <span class="off-screen">Toggle menu</span>
+                    {{ macros.icon('menu') }}
+                </a>
+                <ul class="overall-{{ navColor }}">
+                    <li><a href="/" class="red{% if page == "why" %} active{% endif %}">Why HPS Brain Gym&trade;?</a></li>
+                    <li><a href="/how-it-works" class="blue{% if page == "how-it-works" %} active{% endif %}">How it works</a></li>
+                    <li><a href="/the-science" class="purple{% if page == "the-science" %} active{% endif %}">The science</a></li>
+                    <li><a href="/start-now" class="btn btn-{{ navColor }}">Start now</a></li>
+                </ul>
+            </nav>
+        {% endif %}
+        
+    </div>
+</div><!-- /.header -->

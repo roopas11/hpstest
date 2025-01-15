@@ -1,0 +1,231 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_variables.less";
+
+/*--------------------------------------------------*/
+/* Header                                           */
+
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        padding-top: @base4;
+        padding-bottom: @base4;
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: (164/@rem);
+            flex-shrink: 0;
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+        @media (min-width: (@bp-medium)) {
+
+            .wrapper {
+                align-items: flex-start;
+            }
+
+                .logo {
+                    width: (260/@rem);
+                }
+
+        } // @media min @bp-medium
+
+        /*--------------------------------------------------*/
+        /* Navigation                                       */
+
+            /*--------------------------------------------------*/
+            /* Max 999                                   */
+            
+            @media (max-width: (999/@rem)) {
+
+                nav {
+                    position: relative;
+                }
+
+                .menu-toggle {
+                    padding: @base;
+                    display: block;
+                    position: relative;
+                    z-index: 1;
+                    
+                    &:hover,
+                    &:focus {
+                        color: @white;
+
+                        .icon {
+                            transform: scaleY(.8);
+                        }
+                    }
+        
+                    .icon {
+                        transition: transform .2s;
+                        width: (24/@rem);
+                        height: (18/@rem);
+                    }
+
+                    &.active + ul {
+                        display: block;
+                    }
+                }
+
+                ul {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    border-radius: @base 0 @base @base;
+                    padding: @base 0;
+                    text-align: center;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        width: (40/@rem);
+                        height: (34/@rem);
+                        bottom: 100%;
+                        right: 0;
+                        border-radius: @base @base 0 0;
+                        z-index: -1;
+                    }
+
+                    &.overall-red {
+                        background: var(--red);
+
+                        &:before {
+                            background: var(--red);
+                        }
+
+                        .btn {
+                            background: var(--red-dark);
+                        }
+                    }
+                    &.overall-blue {
+                        background: var(--blue);
+
+                        &:before {
+                            background: var(--blue);
+                        }
+
+                        .btn {
+                            background: var(--blue-dark);
+                        }
+                    }
+                    &.overall-purple {
+                        background: var(--purple);
+
+                        &:before {
+                            background: var(--purple);
+                        }
+
+                        .btn {
+                            background: var(--purple-dark);
+                        }
+                    }
+                    &.overall-black {
+                        background: var(--black);
+
+                        &:before {
+                            background: var(--black);
+                        }
+
+                        .btn {
+                            background: var(--black);
+                            text-decoration: underline;
+                        }
+                    }
+
+                    li {
+                        margin: 0;
+                        padding: @base;
+                    }
+
+                    a:not(.btn) {
+                        color: @white;
+                        padding: (4/@rem) @base3;
+                        display: block;
+                        white-space: nowrap;
+                        text-decoration: none;
+
+                        &.active {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            } // @media max 999
+
+            /*--------------------------------------------------*/
+            /* Min 1000                                          */
+            
+                @media (min-width: (1000/@rem)) {
+                    .menu-toggle {
+                        display: none;
+                    }
+
+                    ul {
+                        display: flex;
+                        align-items: center;
+            
+                        li {
+                            margin: 0 @base3;
+                            font-size: (14/@rem);
+            
+                            &:last-of-type {
+                                margin-right: 0;
+                            }
+            
+                        }
+            
+                        a:not(.btn) {
+                            color: @white;
+                            text-decoration: none;
+                            padding: (4/@rem) 0;
+                            display: block;
+                            position: relative;
+
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                height: (1/@rem);
+                                background: @white;
+                                transform: scaleX(0);
+                                transition: transform .2s;
+                            }
+
+                            &:hover,
+                            &:focus,
+                            &.active {
+                                &:after {
+                                    transform: scaleX(1);
+                                }
+                            }
+
+                            &.red:after {
+                                background: var(--red)
+                            }
+                            &.blue:after {
+                                background: var(--blue)
+                            }
+                            &.purple:after {
+                                background: var(--purple)
+                            }
+                        }
+            
+                    }
+                } // @media min 1000
+
+    }

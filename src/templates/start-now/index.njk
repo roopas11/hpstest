@@ -1,0 +1,32 @@
+---
+navColor: 'black'
+canonUrl: '/start-now'
+---
+
+{% extends '../_layouts/global.njk'%}
+
+{% set page = "start-now" %}
+{% set title = "Start Now | HPS Brain Gym™" %}
+{% set description = "The best way to support employee well-being and improve productivity? Focus on brain health. Get in touch with HPS Brain Gym™ to start your journey today." %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/_assets/css/start-now/page.css?v={{ version }}">
+{% endblock %}
+
+{% block content %}
+
+    <section class="hero">
+        <div class="wrapper animated-first">
+            <h1 class="h2">Thinking about a trial?</h1>
+            <div class="copy">
+                <p>Great idea. All you need to do is email us at <a href="mailto:info@braingymconnect.com">info@braingymconnect.com</a> 
+                Then, you can put your mind at ease. We&rsquo;ll take it from there.</p>
+           </div>
+        </div>
+        <picture class="main-blur">
+            <source srcset="/_assets/img/common/bg-blur-large.jpg" media="(min-width: 760px)">
+            <img class="animated-blur" src="/_assets/img/common/bg-blur-small.jpg" alt="" loading="lazy" decoding="async">
+        </picture>
+    </section>
+
+{% endblock %}

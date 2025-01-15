@@ -1,0 +1,112 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+
+    /*--------------------------------------------------*/
+    /* Tables                                           */
+
+        .table {
+            overflow-x: auto;
+            max-width: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-left: solid 1px @s240;
+            border-bottom: solid 1px @s240;
+            border-right: solid 1px @s240;
+            margin: 0 0 (20/@rem);
+            overflow-x: auto;
+            width: 100%;
+
+            /*--------------------------------------------------*/
+            /* Caption                                          */
+
+                caption {
+                    background: @s250;
+                    padding: (10/@rem) (20/@rem);
+                    text-transform: uppercase;
+                    font-weight: @bold;;
+                    text-align: left;
+                    margin: 0 0 (5/@rem);
+                }
+
+            /*--------------------------------------------------*/
+            /* Cells                                            */
+
+                th, td {
+                    padding: (10/@rem) (20/@rem);
+                    text-align: left;
+                    border-top: solid 1px @s240;
+                }
+
+            /*--------------------------------------------------*/
+            /* Heads                                            */
+
+                th {
+                    color: @white;
+                    // background: @primary;
+                }
+
+            /*--------------------------------------------------*/
+            /* Striping                                         */
+
+                tbody tr:nth-child(even) {
+                    background: @s250;
+                }
+
+            /*--------------------------------------------------*/
+            /* Foot                                             */
+
+                tfoot th {
+                    // background: @secondary;
+                }
+
+        } //table
+
+        /*--------------------------------------------------*/
+        /* Mobile Tables                                    */
+        /* Using the data-label attribute method            */
+
+            //@media (max-width: (800/@rem)) {
+
+                .table-responsive {
+
+                    /*--------------------------------------------------*/
+                    /* Hide head and foot                               */
+
+                        thead, tfoot {
+                            .off-screen();
+                        }
+
+                    /*--------------------------------------------------*/
+                    /* Table Row Spacing                                */
+
+                        tr {
+                            display: block;
+                        }
+
+                    /*--------------------------------------------------*/
+                    /* Data Cell with Data Label                        */
+
+                        td {
+                            display: block;
+                            width: 100%;
+                            text-align: right;
+                            .clearfix();
+
+                            &:before {
+                                content: attr(data-label);
+                                font-weight: @bold;;
+                                float: left;
+                                text-align: left;
+                                width: 50%;
+                                margin: 0 (10/@rem) 0 0;
+                            }
+                        }
+
+                } //.table-responsive
+
+            //} // @media max 800

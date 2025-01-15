@@ -1,0 +1,47 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+
+    /*--------------------------------------------------*/
+    /* Hero                                             */
+
+    .hero {
+        position: relative;
+        text-align: center;
+        padding: (177/@rem) 0 (80/@rem);
+
+        .wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .copy {
+            max-width: (720/@rem);
+            margin: 0 auto;
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+            @media (min-width: (@bp-medium)) {
+
+                & {
+                    min-height: 100vh;
+                    display: flex;
+
+                    .wrapper {
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                }
+
+                .copy {
+                    font-size: (20/@rem);
+                }
+
+            } // @media min @bp-medium
+
+    } // .hero

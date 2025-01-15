@@ -1,0 +1,48 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+
+
+    .section-testimonials {
+        position: relative;
+        text-align: center;
+        background: url("/_assets/img/science/bg-testimonials.jpg") no-repeat;
+        background-size: cover;
+
+        .swiper-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .quotes {
+            margin: (40/@rem) 0 0;
+        }
+
+        blockquote {
+            font-weight: @light;
+            font-size: (22/@rem);
+            margin: 0 auto;
+            max-width: (800/@rem);
+
+            & + p {
+                max-width: (380/@rem);
+                margin:  (40/@rem) auto 0;
+
+                span {
+                    display: block;
+                    font-weight: @bold;
+                    font-size: (20/@rem);
+                }
+            }
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+            @media (min-width: (@bp-medium)) {
+                blockquote {
+                    font-size: (28/@rem);
+                }
+            } // @media min @bp-medium
+    }

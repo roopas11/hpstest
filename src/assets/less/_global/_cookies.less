@@ -1,0 +1,60 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+@import "_variables.less";
+
+/*--------------------------------------------------*/
+/* Cookies                                          */
+
+    #cookies {
+        position: fixed;
+        bottom: (16/@rem);
+        left: 5%;
+        width: 90%;
+        background: @white;
+        border-radius: @base;
+        padding: @base2;
+        z-index: 10;
+        font-size: (14/@rem);
+        transform: translateY(150%);
+        transition: transform 1s;
+
+        &.active {
+            transform: translateY(0);
+        }
+
+        .deny-cookies {
+            background: none;
+            color: var(--blue);
+            text-decoration: underline;
+        }
+
+        .btns {
+            margin: 0;
+            text-align: center;
+            justify-content: center;
+        }
+
+        /*--------------------------------------------------*/
+        /* Min 800                                          */
+        
+        @media (min-width: (800/@rem)) {
+            & {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: @base4;
+
+                p {
+                    margin: 0;
+                }
+
+                .btns {
+                    flex-shrink: 0;
+                }
+                .btn {
+                    margin-left: (32/@rem);
+                }
+            }
+        } // @media min 800
+    }

@@ -1,0 +1,139 @@
+---
+navColor: 'black'
+canonUrl: '/train-your-brain'
+---
+
+{% extends '../_layouts/global.njk'%}
+
+{% set consumer = true %}
+{% set title = "HPS Brain Gym™ | Info for Employees" %}
+{% set description = "Read all about how our App and Coaching program can improve your well-being and productivity by supporting brain health. Created by healthcare professionals." %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/_assets/css/train-your-brain/page.css?v={{ version }}">
+{% endblock %}
+
+{% block js %}
+    <script src="/_assets/js/_vendor/swiper.min.js?v={{ version }}"></script>
+    <script src="/_assets/js/train-your-brain/page.js?v={{ version }}"></script>
+    <script src="/_assets/js/_common/phone-section.js?v={{ version }}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <section class="hero">
+        <div class="wrapper animated-first">
+            <h1 class="pirulen">Train your brain</h1>
+            <div class="copy">
+                <p>That&rsquo;s not just a catchy slogan. It&rsquo;s our reason for existing. We help people build healthier brains, enabling them to perform at their peak &ndash; both at work and in life.</p>
+                <a href="/start-now" class="btn btn-transparent">Get started</a>
+           </div>
+        </div>
+        <div class="swiper characters">
+            <div class="swiper-wrapper">
+        
+                <div class="swiper-slide character">
+                    <picture class="person">
+                        <source srcset="/_assets/img/train-your-brain/character-1.png" media="(min-width: 760px)">
+                        <img src="/_assets/img/train-your-brain/character-1-small.png" alt="">
+                    </picture>
+                    <img class="bg" src="/_assets/img/train-your-brain/bg-1.jpg" alt="">
+                </div>
+                <div class="swiper-slide character">
+                    <picture class="person">
+                        <source srcset="/_assets/img/train-your-brain/character-2.png" media="(min-width: 760px)">
+                        <img src="/_assets/img/train-your-brain/character-2-small.png" alt="" loading="lazy" decoding="async">
+                    </picture>
+                    <img class="bg" src="/_assets/img/train-your-brain/bg-1.jpg" alt="">
+                </div>
+                <div class="swiper-slide character">
+                    <picture class="person">
+                        <source srcset="/_assets/img/train-your-brain/character-3.png" media="(min-width: 760px)">
+                        <img src="/_assets/img/train-your-brain/character-3-small.png" alt="" loading="lazy" decoding="async">
+                    </picture>
+                    <img class="bg" src="/_assets/img/train-your-brain/bg-2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="section bg-white welcome">
+        <div class="wrapper-sm animated-section">
+            <h2>Welcome to better brain health, for all.</h2>
+            <p>The <strong>HPS Brain Gym&trade;</strong> program has been created by healthcare professionals who specialize in psychology, psychiatry, and neuroscience.</p>
+
+            <p>Through years of research and clinical practice, we&rsquo;ve witnessed first-hand the impact of brain health promotion and prevention methods on overall well-being and productivity.</p>
+        </div>
+    </section>
+
+    <section class="benefits bg-white">
+        <section class="benefit animated-section">
+            <div class="wrapper">
+                <div class="copy">
+                    <img class="profile" src="/_assets/img/train-your-brain/profile.png" alt="Sally">
+                    <h3>Each employee user is assigned to a human Coach, who guides you through your journey to train your brain.</h3>
+                    <p>Let&rsquo;s explore the great benefits of Brain Gym&trade; and how it can help you in your everyday life.</p>
+                </div>
+            </div>
+            <picture class="bg" >
+                <source srcset="/_assets/img/train-your-brain/benefit-bg-1.jpg" media="(min-width: 1200px)">
+                <source srcset="/_assets/img/train-your-brain/benefit-bg-1-medium.jpg" media="(min-width: 760px)">
+                <img src="/_assets/img/train-your-brain/benefit-bg-1-small.jpg" alt="">
+            </picture>
+        </section>
+        <section class="benefit animated-section">
+            <div class="wrapper">
+                <div class="copy">
+                    {{ macros.icon('worries') }}
+                    <h3>Reduce your<br> worries</h3>
+                    <p>Partner with our coaches and learn evidence-based tools to help manage your emotions.</p>
+                </div>
+            </div>
+            <picture class="bg" >
+                <source srcset="/_assets/img/train-your-brain/benefit-bg-2.jpg" media="(min-width: 1200px)">
+                <source srcset="/_assets/img/train-your-brain/benefit-bg-2-medium.jpg" media="(min-width: 760px)">
+                <img src="/_assets/img/train-your-brain/benefit-bg-2-small.jpg" alt="">
+            </picture>
+        </section>
+        <section class="benefit animated-section">
+            <div class="wrapper">
+                <div class="copy">
+                    {{ macros.icon('sleep') }}
+                    <h3>Improve your <br>sleep</h3>
+                    <p>Learn tips for better sleep and why that matters.</p>
+                </div>
+            </div>
+            <picture class="bg">
+                <source srcset="/_assets/img/train-your-brain/benefit-bg-3.jpg" media="(min-width: 1200px)">
+                <source srcset="/_assets/img/train-your-brain/benefit-bg-3-medium.jpg" media="(min-width: 760px)">
+                <img src="/_assets/img/train-your-brain/benefit-bg-3-small.jpg" alt="">
+            </picture>
+        </section>
+        <section class="benefit animated-section">
+            <div class="wrapper">
+                <div class="copy">
+                    {{ macros.icon('well-being') }}
+                    <h3>Enhance your <br>well-being</h3>
+                    <p>Learn how to manage stress and improve well-being.</p>
+                </div>
+            </div>
+            <picture class="bg">
+                <source srcset="/_assets/img/train-your-brain/benefit-bg-4.jpg" media="(min-width: 1200px)">
+                <source srcset="/_assets/img/train-your-brain/benefit-bg-4-medium.jpg" media="(min-width: 760px)">
+                <img src="/_assets/img/train-your-brain/benefit-bg-4-small.jpg" alt="">
+            </picture>
+        </section>
+    </section>
+
+    {% include "../_includes/_common/phone-section.njk" %}
+
+    <section class="section bg-white section-join">
+        <div class="wrapper-sm animated-section">
+            <h3>Join the brain health revolution</h3>
+            <p><strong>HPS Brain Gym&trade;</strong> is the personal trainer you need to get and stay &lsquo;brain fit&rsquo; for the future. It&rsquo;s time to get your head back in the game.</p>
+            <a href="/start-now" class="btn btn-purple">Start HPS Brain Gym&trade; today</a>
+        </div>
+    </section>
+
+{% endblock %}

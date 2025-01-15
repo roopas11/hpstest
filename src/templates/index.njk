@@ -1,0 +1,168 @@
+---
+navColor: 'red'
+sitemapPriority: '1'
+canonUrl: ''
+---
+
+{% extends './_layouts/global.njk'%}
+
+{% set page = "why" %}
+{% set canonUrl = "" %}
+{% set title = "HPS Brain Gym™ | Employee Well-being & Better Brain Health" %}
+{% set description = "Improve employee well-being and help your people work and live better, with neuroscience-backed HPS Brain Gym™ Connect App and Coaches." %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/_assets/css/home/page.css?v={{ version }}">
+{% endblock %}
+
+{% block content %}
+
+    <picture class="main-blur">
+        <source srcset="/_assets/img/common/bg-blur-large.webp" media="(min-width: 760px)">
+        <img class="animated-blur" src="/_assets/img/home/bg-home.webp" alt="">
+    </picture>
+
+    <section class="hero">
+        <div class="wrapper animated-first">
+            <h1 class="pirulen">Train your brain</h1>
+            <div class="copy">
+                <p>That&rsquo;s not just a catchy slogan. It&rsquo;s our reason for existing. You can now help your employees achieve healthier brains, enabling them to perform at their peak, at work and in life. Welcome to better brain health, for all.</p>
+                <a href="#" class="video-trigger btn btn-blue" data-url="/_assets/video/1-What-is-the-HPS-Brain-Gym.mp4">Watch the video</a>
+           </div>
+        </div>
+    </section>
+
+    <section class="section section-focus">
+        <div class="wrapper">
+            <div class="connect connect1">
+                <div class="arrow-dot blur-dot">
+                    {{ macros.icon('arrow-down') }}
+                </div>
+                <svg class="line" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="100" y1="0" x2="0" y2="100" stroke="#fff" stroke-dasharray="0 1000"/></svg>
+                <div class="bullet blur-dot"></div>
+            </div>
+            <div class="column column-reverse">
+                <div class="col animated-section">
+                    <div class="asset animated-item">
+                        <div class="image circular">
+                            <picture>
+                                <source srcset="/_assets/img/home/focus.webp" media="(min-width: 760px)">
+                                <img src="/_assets/img/home/focus-mobile.webp" alt="Employees well being" loading="lazy" decoding="async">
+                            </picture>
+                            {{ macros.ripples() }}
+                            <div class="glow">
+                                <img src="/_assets/img/home/section-focus-glow.webp" alt="glow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col copy animated-section">
+                    <h2>We&rsquo;re bringing employee <span class="no-wrap">well-being</span> into sharp focus</h2>
+                    <p>Brain health has never been considered more important than it is right now. Research estimates global losses of around <a href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(16)30024-4/fulltext" target="_blank" rel="noopener noreferrer nofollow">$1 trillion</a> a year due to anxiety and depression alone, and over <a href="https://www3.weforum.org/docs/WEF_Harvard_HE_GlobalEconomicBurdenNonCommunicableDiseases_2011.pdf" target="_blank" rel="noopener noreferrer nofollow">$16 trillion</a> between 2010 and 2030 due to mental health conditions as a whole.</p>
+                    <p>In the corporate world, we&rsquo;re talking more than ever about the link between well-being and productivity &ndash; while still grappling with the impact of stress and burnout. Well-being programs that kick-in at crisis points are simply ineffective. And around the world, millions of employees are struggling, forcing organizations to cope with the fallout of absences and low productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-business">
+        <div class="wrapper">
+            <div class="connect connect2">
+                <svg class="line" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100" stroke="#fff" stroke-dasharray="0 1000"/></svg>
+                <div class="bullet blur-dot"></div>
+            </div>
+            <div class="column">
+                <div class="col animated-section">
+                    <div class="asset animated-item">
+                        <div class="image circular">
+                            <picture>
+                                <source srcset="/_assets/img/home/business.webp" media="(min-width: 760px)">
+                                <img src="/_assets/img/home/business-mobile.webp" alt="Your business" loading="lazy" decoding="async">
+                            </picture>
+                            
+                            {{ macros.ripples() }}
+                            <div class="glow">
+                            <img src="/_assets/img/home/section-business-glow.webp" alt="glow" loading="lazy" decoding="async">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col copy animated-section">
+                    <h2>Your people are your business, our business is their brain health</h2>
+                    <p>Helping people learn how to use their brains more effectively is at the very heart of what we do. With the right tools, your employees can realize and achieve their full potential. Supporting better brain health is the key to building and sustaining a high-performance culture that doesn&rsquo;t cost you your people. Improving brain health equips and empowers your people with the tools to manage stress, develop resilience, and reap the wide-ranging rewards of healthier behaviors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section background">
+        <div class="wrapper">
+            <div class="connect connect3">
+                <svg class="line line4" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="100" y1="0" x2="0" y2="100" stroke="#fff" stroke-dasharray="0 1000"/></svg>
+                <div class="bullet blur-dot"></div>
+            </div>
+            <div class="asset animated-section flush">
+                <picture>
+                    <source srcset="/_assets/img/home/office-worker-smiling.webp" media="(min-width: 760px)">
+                    <img src="/_assets/img/home/office-worker-smiling-mobile.webp" alt="Office worker smiling" loading="lazy" decoding="async">
+                </picture>
+            </div>
+            <div class="copy animated-section">
+                <h2>Because healthy brains = a healthy bottom line</h2>
+                <p>Improving brain health isn&rsquo;t only good for your teams, it&rsquo;s also great for business. Healthier brains can lead to clearer thinking and sharper focus on what really matters, with employees working better as team members whether remote or on-site. At HPS Brain Gym&trade; our mission is clear: We help employees train and build healthier brains to perform at their very best.
+                </p>
+                <p>The result? <strong>Employees feel better, and productivity goes up.</strong></p>
+                <a href="/how-it-works" class="btn btn-blue">HPS Brain Gym&trade; in action</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-science">
+        <div class="wrapper">
+            <div class="connect connect4">
+                <svg class="line line4" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="0" y2="100" stroke="#fff" stroke-dasharray="0 1000"/></svg>
+                <div class="bullet blur-dot"></div>
+                <div class="glow glow-purple">
+                    <img src="/_assets/img/home/purple-glow.webp" alt="glow" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="column column-reverse">
+                <div class="col">
+                    <div class="asset asset-group animated-item">
+                        <div class="image circular animated-section">
+                            <img src="/_assets/img/home/lady-with-headphones.webp" alt="Lady with headphones" loading="lazy" decoding="async">
+                            {{ macros.ripples() }}
+                        </div>
+                        <div class="image circular animated-section">
+                            <img src="/_assets/img/home/group-laughing.webp" alt="Group of office workers laughing" loading="lazy" decoding="async">
+                            {{ macros.ripples() }}
+                        </div>
+                    </div>
+                </div>
+                <div class="copy col animated-section">
+                    <h2>And it&rsquo;s all backed by science</h2>
+                    <p>We&rsquo;ve worked in this space for decades. The HPS Brain Gym&trade; program has been created by healthcare professionals who specialize in psychology, psychiatry, and neuroscience. Through years of research and clinical practice, we&rsquo;ve witnessed first-hand the impact of brain health promotion and prevention methods on overall well-being and productivity &ndash; no matter who you are.</p>  
+                    <p>Did you know the World Health Organization (WHO) officially recognized burnout as a new medical condition 5 years ago? For far too many, this growing occupational phenomenon is a reality. We&rsquo;re here to not just beat burnout, but to prevent it.</p>
+                    <a href="/the-science" class="btn btn-purple">See the science</a>
+                </div>
+            </div>
+        </div>
+        <div class="glow glow-blue">
+            <img src="/_assets/img/home/blue-glow.webp" alt="glow" loading="lazy" decoding="async">
+        </div>
+    </section>
+
+    <div class="footnote animated-section">
+        <div class="wrapper">
+            <h3 class="h2">Beat burnout with HPS Brain Gym&trade;</h3>
+            <p><strong>HPS Brain Gym&trade;</strong> is the personal trainer corporate America needs to get and stay brain-fit for the future. Give your employees a sustainable high-performance culture that&rsquo;s built to last by building healthier brains, with the right tools.</p>
+            <a href="/start-now" class="btn btn-blue">Start your journey</a>
+        </div>
+    </div>
+
+    <a href="/how-it-works" class="btn btn-purple btn-oversized">
+        How does HPS Brain Gym&trade; work? {{ macros.icon('chevron-right') }}
+    </a>
+
+
+{% endblock %}

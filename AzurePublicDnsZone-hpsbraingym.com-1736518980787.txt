@@ -1,0 +1,56 @@
+; 	Exported zone file from Azure DNS
+; 	Zone name: hpsbraingym.com
+; 	Date and time (UTC): Fri, 10 Jan 2025 14:23:00 GMT
+
+$TTL 300
+$ORIGIN hpsbraingym.com
+
+; SOA Record
+@	 3600		IN	SOA	ns1-36.azure-dns.com.	azuredns-hostmaster.microsoft.com	(
+	 	 	1	 ;serial
+	 	 	3600	 ;refresh
+	 	 	300	 ;retry
+	 	 	2419200	 ;expire
+	 	 	300	 ;minimum ttl
+)
+
+; NS Records
+@	172800	IN	NS	ns1-36.azure-dns.com.
+@	172800	IN	NS	ns2-36.azure-dns.net.
+@	172800	IN	NS	ns3-36.azure-dns.org.
+@	172800	IN	NS	ns4-36.azure-dns.info.
+
+; MX Records
+hpsbraingym.com	3600	IN	MX	1	aspmx.l.google.com.
+hpsbraingym.com	3600	IN	MX	5	alt1.aspmx.l.google.com.
+hpsbraingym.com	3600	IN	MX	5	alt2.aspmx.l.google.com.
+hpsbraingym.com	3600	IN	MX	10	alt3.aspmx.l.google.com.
+hpsbraingym.com	3600	IN	MX	10	alt4.aspmx.l.google.com.
+
+; A Records
+
+; AAAA Records
+
+; PTR Records
+
+; TXT Records
+@	3600	IN	TXT	"google-site-verification=ogoYaLsBOXXQILGljH_zRVYA0rZ-GfGXVl5awt2ZnNY"
+google._domainkey.hpsbraingym.com	3600	IN	TXT	"\"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkFFRPhY1J8SpmiSvGGGTCY0li9fgeJTUh3fn4IqHPng34RIrWhZa10FplMVpYsyOwyzwi6khrJTQwKI9jiLOvldT1QNWKcILb+Xf0YCHkVmo+kdrG3d+OukT9KUxzm2DDeijEzbs25QuBJkGhnSWUEuYNP/gSV5BgWJ0CdrvkQd1tjBuh0SB3DFzCPPoW6AJ" "W\" \"eO5BsncvokT/LxUrZXY9USFOX6bMYKipuTEXg3rvIXr/vdrcuNAcL0KpWgIfjAGjdZthiwC4ZMvHzuXNAN2wk3tGqlOUthg9Ar1K7Oe+6KTIISDDLFetiPUi5uV1TjTdiriFwSE5AWCVdt9KKhf4QIDAQAB\""
+hpsbraingym.com	3600	IN	TXT	"\"v=spf1 include:_spf.google.com ~all\""
+
+; SRV Records
+
+; SPF Records
+
+; CAA Records
+
+; DS Records
+
+; TLSA Records
+
+; Azure Alias Records
+@	3600	AZURE ALIAS 	A	/subscriptions/3240f421-76ea-4a5e-a0b2-b7a16fd33f95/resourceGroups/HPSBrainGym/providers/Microsoft.Cdn/profiles/hpsbg-afd/afdendpoints/hpsbg-afd-endpoint
+www	3600	AZURE ALIAS 	CNAME	/subscriptions/3240f421-76ea-4a5e-a0b2-b7a16fd33f95/resourceGroups/HPSBrainGym/providers/microsoft.cdn/profiles/hpsbraingym-cdn/endpoints/hpsbraingym-cdn
+
+; Azure TmLink Records
+

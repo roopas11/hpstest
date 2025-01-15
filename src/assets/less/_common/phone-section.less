@@ -1,0 +1,227 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+
+/*--------------------------------------------------*/
+/* Phone Section                                    */
+
+    .phone-section {
+
+        .copy-container {
+            text-align: center;
+            position: relative;
+            padding: (40/@rem) 0;
+        }
+
+        /*--------------------------------------------------*/
+        /* Max @bp-medium                                   */
+        
+        @media (max-width: (@bp-medium)) {
+
+            .phone,
+            .main-blur,
+            .swiper-pagination {
+                display: none;
+            }
+
+            .wrapper {
+                padding: 0;
+            }
+
+            .swiper-wrapper {
+                flex-direction: column; // force stacked layout
+            }
+
+            .swiper {
+                overflow: visible;
+
+                .swiper-slide {
+                    transform: none; // Important for tranlsateZ
+                }
+            }
+
+            .swiper-slide:after {
+                content: '';
+                display: block;
+                background: url('/_assets/img/common/bg-blur-small-cut.png') no-repeat;
+                background-size: cover;
+                width: (484/@rem);
+                height: (826/@rem);
+                right: 0;
+                top: -60%;
+                position: absolute;
+                z-index: -2;
+                max-width: 100%;
+            }
+
+            .swiper-slide:nth-of-type(2n):after {
+                transform: scale(-1);
+                right: auto;
+                left: 0;
+                top: -40%;
+            }
+            .swiper-slide:nth-of-type(3n):after {
+                top: -35%;
+            }
+
+            .copy {
+                position: relative;
+                z-index: 1;
+                padding: @wrapperPadding;
+            }
+
+            img {
+                height: (300/@rem);
+                width: auto;
+                margin: @base6 0 0; 
+            }
+
+            .image-one {
+                margin-bottom: -(@base2); // due to whitespace in image
+            }
+            
+        } // @media max @bp-medium
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+        @media (min-width: (@bp-medium)) {
+
+            & {
+                position: relative;
+            }
+
+            .spacer {
+                height: 300vh;
+            }
+
+            /*--------------------------------------------------*/
+            /* Pinned Container                                 */
+
+                .pinned-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100vh;
+
+                    .main-blur {
+                        position: absolute;
+                        right: 40%;
+                        top: -(600/@rem);
+                        z-index: -1;
+                        transform: scaleX(-1);
+
+                        img {
+                            max-width: none;
+                        }
+                    }
+                }
+
+            /*--------------------------------------------------*/
+            /* Wrapper Layout                                   */
+
+                .wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+            /*--------------------------------------------------*/
+            /* Copy                                             */
+
+                .copy-container {
+                    width: 40%;
+                    text-align: left;
+                    display: flex; // Important due to swiper js vetical direction
+                    max-height: 100vh;
+                    padding: @base2 0;
+
+                    .copy {
+                        opacity: 0;
+                        transition: opacity .4s;
+                    }
+
+                    .swiper {
+                        overflow: hidden;
+                    }
+
+                    .swiper-slide {
+                        display: flex;
+                        align-items: center;
+
+                        &.swiper-slide-active .copy {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+            /*--------------------------------------------------*/
+            /* Phone Container                                  */
+
+                .phone-container {
+                    width: 60%;
+                    flex-shrink: 0;
+                    text-align: center;
+                    min-height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                /*--------------------------------------------------*/
+                /* Phone                                            */
+
+                    @phone-height: 605;
+                    @phone-width: 269;
+
+                    .phone {
+                        position: relative;
+                        display: inline-block;
+                        height: (@phone-height/@rem);
+                        width: (@phone-width/@rem);
+                        transform: rotate(-13deg);
+        
+                        .mask {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            mask: url('/_assets/img/how/phone-mask.webp');
+                            mask-size: cover;
+
+                            .images {
+                                display: flex;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                            }
+
+                            img {
+                                max-width: none;
+                                transition: transform .6s;   
+                            }
+                        }
+
+                        .shadow {
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                        }
+                    }
+
+            /*--------------------------------------------------*/
+            /* Slide the internal phone images across           */
+
+                &.slide-1 .mask img {
+                    transform: translateX(-100%); 
+                }
+                &.slide-2 .mask img {
+                    transform: translateX(-200%); 
+                }
+        } // @media min @bp-medium
+
+    } // .phone-section

@@ -1,0 +1,202 @@
+---
+navColor: 'purple'
+canonUrl: '/the-science'
+---
+
+{% extends '../_layouts/global.njk'%}
+
+{% set page = "the-science" %}
+{% set title = "The Science | HPS Brain Gym™" %}
+{% set description = "Discover the science behind HPS Brain Gym™, the employee well-being program designed by healthcare professionals in psychology, psychiatry and neuroscience." %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/_assets/css/science/page.css?v={{ version }}">
+{% endblock %}
+
+{% block js %}
+    <script src="/_assets/js/science/page.js?v={{ version }}" defer></script>
+    <script src="/_assets/js/_vendor/swiper.min.js?v={{ version }}"></script>
+    <script src="/_assets/js/_common/testimonials-section.js?v={{ version }}" defer></script>
+{% endblock %}
+
+{% block content %}
+
+    <section class="section intro animated-first">
+        <div class="wrapper">
+            <h1 class="h2">The mind-tingling science of HPS Brain Gym&trade;</h1>
+            <div class="copy">
+                <p>It&rsquo;s not rocket science, it&rsquo;s neuroscience. And we&rsquo;ve been thinking and working in this area for decades.</p>
+           </div>
+        </div>
+    </section>
+
+    <section class="brain-section">
+        <div class="spacer"></div>
+        <div class="pinned-container">
+            <div class="brain-container">
+                <div class="container">
+                    <img src="/_assets/img/science/brain.webp" alt="">
+                </div>
+                <picture class="main-blur">
+                    <source srcset="/_assets/img/common/bg-blur-large.webp" media="(min-width: 760px)">
+                    <img class="animated-blur" src="/_assets/img/common/bg-blur-small.webp" alt="">
+                </picture>
+            </div> 
+
+            <div class="text-wrapper">
+
+                <div class="text-container pirulen">
+                    <p><span>Disclaimer:</span>This page may cause brain stimulation.<br>
+                    In a good way.</p>
+                </div>
+
+                <div class="text-container">
+                    <div class="copy copy-red">
+                        {{ macros.icon('brain') }}
+                        <p>The HPS Brain Gym&trade; has been created by healthcare professionals, with decades of experience in psychology, psychiatry and neuroscience. We&rsquo;ve distilled years of research and clinical practice into this program.</p>
+                        <picture>
+                            <source srcset="/_assets/img/science/blur-red.webp" media="(min-width: 760px)">
+                            <img class="blur" src="/_assets/img/science/blur-red-small.webp" alt="" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                </div>
+
+                <div class="text-container">
+                    <div class="copy copy-purple">
+                        {{ macros.icon('cog') }}
+                        <p>Our solution is an integrated one, with a foundation in evidence-based psychological tools. This approach promotes adaptive coping to create positive changes in the structure and function of the brain, all the while buffering the brain from the negative effects of stress. </p>
+                        <picture>
+                            <source srcset="/_assets/img/science/blur-purple.webp" media="(min-width: 760px)">
+                            <img class="blur" src="/_assets/img/science/blur-purple-small.webp" alt="" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                </div>
+
+                <div class="text-container">
+                    <div class="copy copy-blue">
+                        {{ macros.icon('laptop') }}
+                        <p>Our network of trained HPS Brain Gym&trade; Coaches provides face-to-face and online coaching, combined with an integrated digital platform for connection and further learning. Your brain is constantly on. Now you can rely on the right support to always be there too.</p>
+                        <picture>
+                            <source srcset="/_assets/img/science/blur-blue.webp" media="(min-width: 760px)">
+                            <img class="blur" src="/_assets/img/science/blur-blue-small.webp" alt="" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                </div>
+
+            </div> <!-- /.text-wrapper -->
+        </div> <!-- /.pinned-container -->
+    </section>
+
+    <section class="section section-usp">
+        <div class="wrapper">
+            <div class="column animated-section">
+                <div class="col flush">
+                    <a href="#" class="video-trigger" data-url="/_assets/video/2-Science-Behind-the-HPS-Brain-Gym.mp4">
+                        {{ macros.icon('play-arrow', circle="true") }}
+                        <img src="/_assets/img/videos/video-2-placeholder.webp" alt="Our head of brain health video">
+                    </a>
+                </div>
+                <div class="col copy">
+                    <h3 class="h2">Our head of brain health</h3>
+                    <p>Jim Hudziak, MD is the co-founder and creator of the HPS Brain Gym&trade;. After over 30 years of scientifically testing and implementing health promotion, illness prevention, and intervention strategies for brain health, he created this program to bring the knowledge and skills to build healthier brains to the workplace.</p>
+                </div>
+            </div>
+            <div class="column animated-section">
+                <div class="col flush">
+                    <a href="#" class="video-trigger" data-url="/_assets/video/3-Why-is-HPSBG-a-Better-Choice-for-the-Corporate-World.mp4">
+                        {{ macros.icon('play-arrow', circle="true") }}
+                        <img src="/_assets/img/videos/video-3-placeholder.webp" alt="What makes us different video">
+                    </a>
+                </div>
+                <div class="col copy">
+                    <h3 class="h2">What makes us different?</h3>
+                    <p>Each brain is unique. Our human coaches, teamed with Brain Gym Connect, are trained to meet everyone where they&apos;re at. Our full suite of integrated products makes our users feel understood, supported, guided, and educated in the science of how to train their brains.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-testimonials">
+        <div class="wrapper">
+            <div class="copy animated-section">
+                <h3 class="h2">We care what people think</h3>
+                <p>Here&rsquo;s what other people and businesses who have tried us have to say.</p>
+            </div>
+            <div class="swiper quotes animated-section">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;The best program I have ever put into place for my team. Even in four-weeks we were all functioning better as individuals but more importantly as a team. The beauty of Brain Gym is it is easy, simple and actually works!&rdquo;
+                        </blockquote>
+                        <p><span>Stephanie Pronk</span>
+                            Former Senior Vice President, National Health Transformation Team Leader, AON
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;The pandemic has really highlighted how important humans are to businesses and that it&rsquo;s not always about profits first. You might see more of a balance in a lot of organizations between people and profits, recognizing that if people are not healthy and well, that profits aren&rsquo;t going to come along&rdquo;
+                        </blockquote>
+                        <p><span>Stephanie Pronk</span>
+                            Former Senior Vice President, National Health Transformation Team Leader, AON
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;You can see warning signs much better when you&rsquo;re face-to-face with someone. That&rsquo;s been one of the challenges and that will continue to be a challenge.&rdquo;
+                        </blockquote>
+                        <p><span>Stephanie Pronk</span>
+                            Former Senior Vice President, National Health Transformation Team Leader, AON
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-team bg-white">
+        <div class="wrapper">
+            <div class="copy animated-section">
+                <h3 class="h2">The brains behind HPS Brain Gym&trade;</h3>
+                <p>Meet our team of brain health experts who bring the <strong>HPS Brain Gym&trade;</strong> to life.</p>
+            </div>
+            <div class="members grid animated-section">
+                <div class="member animated-stagger">
+                    <div class="asset">
+                        <h4>Meet Jim</h4>
+                        <img src="/_assets/img/science/Jim-Hudziak.webp" alt="Jim Hudziak">
+                    </div>
+                    <div class="copy">
+                        <p>Jim Hudziak, M.D., is a Clinician Scientist in the field of neuropsychiatry who has spent over 30 years practicing brain health promotion, illness prevention, and intervention strategies. He is known internationally for his work on the impact of the environment, genetics and epigenetics on brain development and health. He has over 250 peer-reviewed publications on his research in children, families, college students, medical students, and members of the corporate workforce. He has developed widely known health promotion and intervention programs to teach others about the relationship between their habits, behaviors, and their brain health.</p>
+                    </div>
+                </div>
+            
+                <div class="member animated-stagger">
+                    <div class="asset">
+                        <h4>Meet Masha</h4>
+                        <img src="/_assets/img/science/Masha-Ivanova.webp" alt="Masha Ivanova">
+                    </div>
+                    <div class="copy">
+                        <p>Masha Ivanova, Ph.D., is a Licensed Clinical Psychologist with decades of clinical and research experience. Dr. Ivanova received her Ph.D. from the University at Albany, and completed her advanced clinical and research training at the University of Vermont and the University of Vermont Medical Center. Her research examines how family and cultural influences affect emotional and behavioral health and well-being across the lifespan.</p>
+                    </div>
+                </div>
+            
+                <div class="member animated-stagger">
+                    <div class="asset">
+                        <h4>Meet Azilee</h4>
+                        <img src="/_assets/img/science/Azilee-Curl.webp" alt="Azilee Curl">
+                    </div>
+                    <div class="copy">
+                        <p>Azilee Curl, B.S. (Neuroscience), is a Clinical Researcher and Project Manager who helps to research, develop, and promote health-promotion programs. Her research includes the neurobiology of Autism Spectrum Disorder, population well-being in university and medical school settings, and the biochemical measurements of sleep and emotions. She has developed multiple apps that use applied neuroscience to monitor and promote well-being behaviors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a class="btn btn-purple btn-oversized" href="/start-now">
+        Start a trial {{ macros.icon('chevron-right') }}
+    </a>
+
+
+{% endblock %}

@@ -1,0 +1,1 @@
+window.addEventListener("DOMContentLoaded",(e=>{new Swiper(".quotes",{slidesPerView:1,loop:!0,autoplay:{delay:1e4,disableOnInteraction:!0},pagination:{el:".swiper-pagination",clickable:!0}})}));

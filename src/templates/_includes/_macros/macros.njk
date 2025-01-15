@@ -1,0 +1,17 @@
+{% macro icon(icon, circle="", class="", label="") %}
+    {% if circle %}
+        <span class="icon-circular {{ class }}">
+    {% endif %}
+        <span class="icon icon-{{ icon }} {{ class }}"><svg><use xlink:href="/_assets/svg/_global/sprite.svg#{{ icon }}"  {% if label %}title="{{ label }}" {% endif %} /></svg></span>
+    {% if circle %}
+        </span>
+    {% endif %}
+{% endmacro %}
+
+{% macro ripples(ripples) %}
+    <div class="ripples">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+{% endmacro %}

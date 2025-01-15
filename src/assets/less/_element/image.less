@@ -1,0 +1,116 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+
+    /*--------------------------------------------------*/
+    /* Images                                           */
+
+        .fluid-image img,
+        img {
+            max-width: 100%;
+            height: auto;
+            -ms-interpolation-mode: bicubic;
+        }
+
+    /*--------------------------------------------------*/
+    /* Flush                                            */
+
+    /*--------------------------------------------------*/
+    /* Max @bp-medium                                          */
+    
+    @media (max-width: (@bp-medium)) {
+        .flush {
+            margin-left: -(@padding) !important;
+            margin-right: -(@padding) !important;
+        }
+    } // @media max @bp-medium
+        
+
+    /*--------------------------------------------------*/
+    /* Circular Assets (with ripples)                   */
+
+        .asset .circular {
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            width: (184/@rem);
+            height: (184/@rem);
+
+            img {
+                border-radius: 50%;
+                display: block;
+                position: relative; 
+                z-index: 1;   
+            }
+
+            .ripples,
+            .ripples span {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            
+            .ripples span {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+                border: 3px solid rgba(255,255,255,.4);
+                width: calc(100% + 18px);
+                height: calc(100% + 18px);
+                border-radius: 50%;
+                z-index: -1;
+
+                &:nth-of-type(2) {
+                    border: 2px solid rgba(255,255,255,.25);
+                    width: calc(100% + 32px);
+                    height: calc(100% + 32px);
+                }
+                &:nth-of-type(3) {
+                    border: 1px solid rgba(255,255,255,.1);
+                    width: calc(100% + 48px);
+                    height: calc(100% + 48px);
+                }
+            }
+
+            /*--------------------------------------------------*/
+            /* Min @bp-medium                                   */
+            
+            @media (min-width: (@bp-medium)) {
+                & {
+                    width: (320/@rem);
+                    height: (320/@rem);
+
+                    .ripples span {
+                        width: calc(100% + 26px);
+                        height: calc(100% + 26px);
+        
+                        &:nth-of-type(2) {
+                            width: calc(100% + 52px);
+                            height: calc(100% + 52px);
+                        }
+                        &:nth-of-type(3) {
+                            width: calc(100% + 78px);
+                            height: calc(100% + 78px);
+                        }
+                    }
+                }
+            } // @media min @bp-medium
+        }
+
+        .animated-item.active {
+            .ripples {
+                animation: pulse 4s infinite;
+            }
+        }
+
+        @keyframes pulse {
+
+            50% {
+                transform: scale(1.03);
+                opacity: .5;
+            }
+        }

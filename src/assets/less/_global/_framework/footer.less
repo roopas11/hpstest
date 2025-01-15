@@ -1,0 +1,58 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_variables.less";
+
+/*--------------------------------------------------*/
+/* Footer                                           */
+
+    .footer {
+        padding: (30/@rem) 0;
+        position: relative;
+        z-index: 1;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: (200/@rem);
+        }
+
+        nav {
+            margin: (50/@rem) 0 (32/@rem);
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
+
+        p {
+            margin-top: @base2;
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+        @media (min-width: (@bp-medium)) {
+
+            & {
+                padding: (100/@rem) 0;
+            }
+
+            .wrapper {
+                flex-direction: row;
+
+                .logo {
+                    width: (260/@rem);
+                }
+
+                nav {
+                    margin: 0;
+                }
+            }
+        } // @media min @bp-medium
+    }

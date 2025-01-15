@@ -1,0 +1,293 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+    @import "../_common/testimonial-section.less";
+
+/*--------------------------------------------------*/
+/* Science                                          */
+
+    .intro {
+        padding-bottom: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    /*--------------------------------------------------*/
+    /* Brain Section                                    */
+
+        .brain-section {
+            position: relative;
+            width: 100%;
+        
+            .main-blur {
+                display: none;
+            }
+
+            .text-container {
+                padding: 0 @base2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.pirulen {
+                    display: none;
+                }
+
+                .copy {
+                    text-align: center;
+                    max-width: (368/@rem);
+                    margin: 0 auto (86/@rem);
+                    position: relative;
+
+                    .icon {
+                        color: @white;
+                        width: (76/@rem);
+                        height: (76/@rem);
+                        margin: 0 auto (20/@rem);
+                    }
+
+                    .blur {
+                        width: (412/@rem);
+                        height: (412/@rem);
+                        max-width: none;
+                        position: absolute;
+                        top: 20%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        z-index: -1;
+                    }
+                }
+            }
+
+            .brain-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .container {
+                    display: inline-block;
+                    overflow: hidden;
+                    position: relative;
+                    z-index: 1;
+
+                    img {
+                        position: relative;
+                        z-index: 1;
+                    }
+                }
+            }
+
+            /*--------------------------------------------------*/
+            /* Min @bp-medium                                   */
+            
+            @media (min-width: (@bp-medium)) {
+                & {
+                    .spacer {
+                        height: 400vh;
+                    }
+
+                    .pinned-container {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                    }
+
+                    .text-container {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        padding: 0 @base2;
+                        z-index: 99;
+                        opacity: 0;
+                        visibility: hidden;
+            
+                        &.pirulen {
+                            display: flex;
+                            text-align: center;
+                            font-family: @pirulen;
+                            z-index: 1;
+                            font-size: (20/@rem);
+                            letter-spacing: 16px;
+                            line-height: 1.5;
+                            margin: 0;
+                            text-shadow: 0 (3/@rem) (6/@rem) rgba(0,0,0,.16);
+            
+                            span {
+                                display: block;
+                                color: var(--blue);
+                            }
+                        }
+    
+                        .copy {
+                            margin: 0 auto;
+                            transition: all 1s;
+            
+                            .blur {
+                                width: (784/@rem);
+                                height: (784/@rem);
+                                max-width: none;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%,-50%);
+                                z-index: -1;
+                            }
+            
+                            &.copy-red .blur {
+                                top: 20%;
+                                left: 67%;
+                            }
+                            &.copy-purple .blur {
+                                top: 24%;
+                                left: 43%;
+                            }
+                            &.copy-blue .blur {
+                                left: 36%;
+                            }
+                        }
+                    }
+
+                    .brain-container {
+                        position: absolute;
+                        width: 100vw;
+                        height: 100vh;
+                        top: 0;
+                        left: 0;
+
+                        .main-blur {
+                            display: block;
+                            position: absolute;
+                            top: -10%;
+                            left: -40%;
+                            width: 100%;
+                            transform: scaleX(-1);
+                            z-index: -1;
+                
+                            img {
+                                max-width: none;
+                            }
+                        }
+                    }
+                }
+            } // @media min @bp-medium
+        }
+
+
+    /*--------------------------------------------------*/
+    /* Section Unique selling points                    */
+
+        .section-usp {
+            padding: 0;
+        
+            .copy {
+                padding: (40/@rem) 0;
+            }
+        
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+            @media (min-width: (@bp-medium)) {
+        
+                & {
+                    padding: (60/@rem) 0;
+
+                    .column {
+        
+                        & + .column {
+                            margin-top: (40/@rem);
+                        }
+            
+                        .copy {
+                            padding: 0 0 0 (100/@rem);
+                        }
+                    }
+            
+                    .video {
+                        margin: 0;
+                    }
+                }
+        
+            } // @media min @bp-medium
+
+        } //.section-usp
+
+    /*--------------------------------------------------*/
+    /* Team                                             */
+
+        .section-team {
+            position: relative;
+            text-align: center;
+
+            .members {
+                margin-top: (46/@rem);
+            }
+
+            .member {
+                min-height: (382/@rem);
+                text-align: left;
+                width: 100%;
+                display: flex;
+                flex-direction: column;              
+
+                .asset {
+                    position: relative;
+                    margin: 0;
+
+                    h4 {
+                        position: absolute;
+                        font-size: (32/@rem);
+                        color: @white;
+                        line-height: 1;
+                        bottom: (20/@rem);
+                        left: (20/@rem);
+                        z-index: 1;
+                        margin: 0;
+                    }
+
+                    img {
+                        display: block;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        transition: all 0.4s ease-in-out 0s;
+                        z-index: 1;
+                        background: linear-gradient(rgba(0,0,0,0) 0%, @black 100%);
+                        height: 50%;
+                        top: 50%;
+                    }
+                }
+
+                .copy {
+                    padding: (20/@rem);
+                    flex-grow: 1;
+                    color: @white;
+                    background: @black;
+
+                    :last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            /*--------------------------------------------------*/
+            /* Min @bp-medium                                   */
+            
+                @media (min-width: (@bp-medium)) {
+                    .grid {
+                        display: grid;
+                        gap: @base2;
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                } // @media min @bp-medium
+        }
+
+    

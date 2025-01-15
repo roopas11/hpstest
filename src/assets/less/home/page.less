@@ -1,0 +1,373 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+
+/*--------------------------------------------------*/
+/* Home                                             */
+
+    .main-blur {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+
+        img {
+            max-width: none;
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+            @media (min-width: (@bp-medium)) {
+                & {
+                    top: -(212/@rem);
+                    right: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+    }
+
+    .hero {
+        position: relative;
+        z-index: 2;
+
+        h1 {
+            letter-spacing: 20px; // See alignment issues with letter spacing: https://stackoverflow.com/questions/21612058/letter-spacing-wrong-text-center-alignment
+            margin: 0 -(20/@rem) (60/@rem) 0; 
+        }
+
+        .copy .video-trigger {
+            display: inline-block;
+            font-size: (16/@rem);
+            margin: @base3 auto @base5;
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+            @media (min-width: (@bp-medium)) {
+                & {
+                    margin-bottom: -(40/@rem);
+
+                    h1 {
+                        margin: auto -20px auto 0;
+                    }
+
+                    .copy {
+                        padding: 0;
+                    }
+                }
+            } // @media min @bp-medium
+    }
+
+    /*--------------------------------------------------*/
+    /* Blurred Dots                                     */
+
+        .blur-dot,
+        .arrow-dot {
+            position: relative;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                background: @white;
+                box-shadow: 0 (3/@rem) (6/@rem) rgba(@white, .16);
+                filter: blur(1px);
+            }
+
+            &:after {
+                width: (34/@rem);
+                height: (34/@rem);
+                filter: blur(5px);
+                z-index: -1;
+            }
+        }
+
+        .arrow-dot:after {
+            animation: grow 4s infinite;
+        }
+
+        @keyframes grow {
+            50% {
+                transform: translate(-50%,-50%) scale(1.4);
+            }
+        }
+
+    /*--------------------------------------------------*/
+    /* Connecting Lines                                 */
+
+        .connect {
+            display: none;
+
+            /*--------------------------------------------------*/
+            /* Min @bp-medium                                   */
+            
+            @media (min-width: (@bp-medium)) {
+                & {
+                    display: block;
+                    position: relative;
+                    width: calc(50% - 17px);
+                    left: 17px;
+                    height: (240/@rem);
+        
+                    .arrow-dot {
+                        position: absolute;
+                        top: -(12/@rem);
+                        right: -(12/@rem);
+                        width: (24/@rem);
+                        height: (24/@rem);
+                        border-radius: 50%;
+                        background: @white;
+                        box-shadow: 0 0 6px @white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+        
+                        .icon {
+                            width: (10/@rem);
+                            height: (8/@rem);
+                            z-index: 10;
+                            position: relative;
+                            color: @black;
+                        }
+                    }
+        
+                    .bullet {
+                        position: absolute;
+                        bottom: -(12/@rem);
+                        left: -(11/@rem);
+                        width: (24/@rem);
+                        height: (24/@rem);
+                        transform: scale(0);
+                        z-index: 1;
+                    }
+        
+                    .line {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                        filter: blur(1px);
+                    }
+        
+                    &.connect2 {
+                        left: 25%;
+                        width: 25%;
+        
+                        .bullet {
+                            left: calc(100% - 12px);
+                        }
+                    }
+        
+                    &.connect4 {
+
+                        .glow-purple {
+                            top: 100%;
+                            left: (48/@rem);
+                            width: (996/@rem);
+                            height: (994/@rem);
+                            transform: translate(-50%, -50%);
+                        }        
+                    }
+                }
+            } // @media min @bp-medium
+
+        } // .connect
+
+        .copy {
+            text-align: center;
+
+            h2 {
+                max-width: (490/@rem);
+            }
+        
+            > *:last-child {
+                margin: 0;
+            }
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+            @media (min-width: (@bp-medium)) {
+
+                .section:not(.hero) {
+                    padding: 0; // remove padding to allow section to sit flush and then spaced out with the height of the connecting lines
+
+                    .copy {
+                        text-align: left;
+                        padding: (40/@rem) 0;
+                        position: relative;
+                        z-index: 1;        
+                    }
+                }
+
+                .column .asset {
+                    position: absolute; // position images absolute so they do not effect connecting lines position
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+
+
+    /*--------------------------------------------------*/
+    /* Specific Sections                                */
+
+        .section-focus {
+            position: relative;
+            z-index: 1;
+
+            /*--------------------------------------------------*/
+            /* Max @bp-medium                                   */
+            
+            @media (max-width: (@bp-medium)) {
+                & {
+                    padding-top: 0;
+                }
+            } // @media max @bp-medium
+
+            .glow {
+                left: 50%;
+                top: 50%;
+                transform: translate3d(-50%,-50%, 0);
+                width: (734/@rem);
+                height: (705/@rem);
+                z-index: -2;
+
+                /*--------------------------------------------------*/
+                /* Min @bp-medium                                   */
+                
+                @media (min-width: (@bp-medium)) {
+                    & {
+                        left: -(130/@rem);
+                        top: 50%;
+                        transform: translate3d(0,-50%, 0);
+                    }
+                } // @media min @bp-medium
+            }
+        }
+
+        .section-business {
+
+            .glow {
+                right: -(130/@rem);
+                top: 50%;
+                transform: translate3d(0,-50%, 0);
+                width: (784/@rem);
+                height: (784/@rem);
+                z-index: -2;
+            }
+        }
+
+        .section-science {
+            position: relative;
+
+            .glow-blue {
+                top: 0;
+                transform: translate3d(0,-30%,0);
+                right: 10%;
+                width: (985/@rem);
+                height: (982/@rem);
+            }
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+            @media (min-width: (@bp-medium)) {
+                .section.background {
+
+                    .copy h2 {
+                        max-width: (390/@rem);
+                    }
+
+                    .asset {
+                        top: (120/@rem);
+
+                        &:before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            height: 100%;
+                            width: 60%;
+                            background: linear-gradient(to right, @black , rgba(0,0,0,0));;
+                        }
+                    }
+                }
+            } // @media min @bp-medium
+
+    /*--------------------------------------------------*/
+    /* Asset Groups                                     */
+
+        .asset-group {
+            position: relative;
+
+            .circular {
+                width: (196/@rem);
+                height: (196/@rem);
+
+                &:last-of-type {
+                    position: absolute;
+                    top: 60%;
+                    left: 60%;
+                    width: (158/@rem);
+                    height: (158/@rem);
+                    z-index: 1;
+                }
+            }
+            /*--------------------------------------------------*/
+            /* Min @bp-medium                                   */
+            
+                @media (min-width: (@bp-medium)) {
+
+                    .circular {
+                        width: (270/@rem);
+                        height: (270/@rem);
+
+                        &:last-of-type {
+                            width: (220/@rem);
+                            height: (220/@rem);
+                        }
+                    }
+                }
+        }
+
+
+    /*--------------------------------------------------*/
+    /* Footnote                                         */
+
+        .footnote {
+            text-align: center;
+            padding: (100/@rem) 0;
+
+            .wrapper {
+                max-width: (710/@rem);
+            }
+
+            /*--------------------------------------------------*/
+            /* Max @bp-medium                                   */
+            
+            @media (max-width: (@bp-medium)) {
+                & {
+                    .bg-white();
+
+                    h3 {
+                        color: var(--blue);
+                    }
+                }
+            } // @media max @bp-medium
+        }

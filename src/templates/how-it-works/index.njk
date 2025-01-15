@@ -1,0 +1,140 @@
+---
+navColor: 'blue'
+canonUrl: '/how-it-works'
+---
+
+{% extends '../_layouts/global.njk'%}
+
+{% set page = "how-it-works" %}
+{% set title = "How It Works | HPS Brain Gym™" %}
+{% set description = "Explore how HPS Brain Gym™ supports employee-well-being and promotes brain health, from evidence-based App tools to specially-trained Coaches." %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/_assets/css/how/page.css?v={{ version }}">
+{% endblock %}
+
+{% block js %}
+    <script src="/_assets/js/_common/phone-section.js?v={{ version }}"></script>
+    <script src="/_assets/js/_vendor/swiper.min.js?v={{ version }}"></script>
+    <script src="/_assets/js/_common/testimonials-section.js?v={{ version }}" defer></script>
+{% endblock %}
+
+{% block content %}
+
+    <section class="section intro animated-first">
+        <div class="wrapper">
+            <h1 class="h2">This is how HPS&nbsp;Brain&nbsp;Gym&trade; works</h1>
+            <div class="copy">
+                <p>It&rsquo;s easy to get your head around.</p>
+           </div>
+        </div>
+    </section>
+
+    {% include "../_includes/_common/phone-section.njk" %}
+
+    <section class="section sign-up">
+        <div class="wrapper">
+            <div class="column">
+                <div class="col">
+                    <div class="asset animated-section">
+                        <div class="glow glow-blue">
+                            <img src="/_assets/img/how/blue-glow.webp" alt="glow">
+                        </div>
+                        <div class="image circular animated-item">
+                            <picture>
+                                <source srcset="/_assets/img/how/man-on-laptop.webp" media="(min-width: 760px)">
+                                <img src="/_assets/img/how/man-on-laptop-mobile.webp" alt="Man working on laptop smiling" loading="lazy" decoding="async">
+                            </picture>
+                            {{ macros.ripples() }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col copy animated-section">
+                    <h2>Put HPS Brain Gym&trade; to the test</h2>
+                    <p>Why wait? You&rsquo;re here. Your brain is already telling you something. Sign up to one of our trials. When it comes to brain health, there&rsquo;s no better time than right now.</p>
+                    <a href="/start-now" class="btn btn-blue">Sign up for a trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section coaches bg-white">
+        <div class="wrapper">
+            <div class="column">
+                <div class="col animated-section flush">
+                    <a href="#" class="video-trigger" data-url="/_assets/video/4-What-makes-an-HPSBG-Coach-Different.mp4">
+                        {{ macros.icon('play-arrow', circle="true") }}
+                        <img src="/_assets/img/videos/video-4-placeholder.webp" alt="Our coaches video">
+                    </a>
+                </div>
+                <div class="col copy animated-section">
+                    <h3 class="h2">Our Coaches</h3>
+                    <p>HPS Brain Gym&trade; Coaches are expert personal trainers for your brain. Their expertise in emotions and behaviors, and their specialized training in evidence-based well-being practices, will help you become the best version of yourself while on the job and outside of work.</p>
+                    
+                </div>
+            </div>
+            <div class="column column-reverse">
+                <div class="col animated-section flush">
+                    <a href="#" class="video-trigger" data-url="/_assets/video/5-What-is-Brain-Gym-Connect.mp4">
+                        {{ macros.icon('play-arrow', circle="true") }}
+                        <img src="/_assets/img/videos/video-5-placeholder.webp" alt="Brain Gym Connect App video">
+                    </a>
+                </div>
+                <div class="col copy animated-section">
+                    <h3 class="h2">The Brain Gym Connect App</h3>
+                    <p>The Brain Gym Connect App is your portal to the world of HPS Brain Gym&trade;. The Connect App has it all, from surveys about who you are and how you&apos;re feeling to hours of curated well-being content. Employees and Coaches can connect directly through our in-app call and message platform. All of this is supported by a one-of-a-kind well-being AI program that is both curated, personalized, and generative (Brain Gym Bot). If you&apos;re feeling sad, nervous, or happy, your Coach is one click away.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-testimonials">
+        <div class="wrapper">
+            <div class="copy animated-section">
+                <h3 class="h2">Thoughts from our Coaches</h3>
+                <p>Our coaches are behavioral specialists, trained to improve well-being.<br/>Here&apos;s what they think about HPS Brain Gym&trade;</p>
+            </div>
+            <div class="swiper quotes animated-section">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;I would wholeheartedly recommend this to anyone!&rdquo;
+                        </blockquote>
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;This is real world, life changing work.&rdquo;
+                        </blockquote>
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;I, and ALL my employees, were able to see progress, which was so nice for my own work - I don&rsquo;t frequently see progress in a short amount of time in my current role.&rdquo;
+                        </blockquote>
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;It is so fun to be part of such a positive, helpful project that really made an impact on people&rsquo;s lives.&rdquo;
+                        </blockquote>
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;The HPS Brain Gym program prioritized the coaches as much as the clients.&rdquo;
+                        </blockquote>
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            &ldquo;Refreshing to work with people who have the energy, interest, time, curiosity, space, and privilege in self-reflection.&rdquo;
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <a class="btn btn-blue btn-oversized" href="/the-science">
+        The science behind HPS Brain Gym&trade; {{ macros.icon('chevron-right') }}
+    </a>
+
+
+{% endblock %}

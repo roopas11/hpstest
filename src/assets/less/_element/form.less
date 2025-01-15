@@ -1,0 +1,374 @@
+/*--------------------------------------------------*/
+/* Forms                                            */
+
+    @import "../_global/_variables.less";
+
+/*--------------------------------------------------*/
+/* Form Variables                                   */
+
+    @formBg: none;
+    @formPadding: (16/@rem);
+    @formMargin: (20/@rem);
+    @rowMargin: (25/@rem);
+    @inputPadding: (8/@rem);
+    @fieldBorder: 1px solid teal;
+
+/*--------------------------------------------------*/
+/* Form                                             */
+
+    form {
+        background: @formBg;
+        padding: @formPadding 0;
+        margin: 0 auto @formMargin;
+    }
+
+        fieldset {
+            border: 0;
+            padding: 0;
+        }
+
+            legend {
+                font-size: (20/@rem);
+                font-weight: normal;
+                color: @s20;
+                margin-bottom: (10/@rem);
+            }
+
+            input,
+            select,
+            textarea {
+                border: @fieldBorder;
+                padding: @inputPadding (@inputPadding * 1.5);
+                margin: 0;
+                border-radius: @radius;
+                width: 100%;
+                background: @white;
+
+                &:hover {
+                    border-color: darken(teal, 10%);
+                }
+
+                &:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+
+                &[type="color"] {
+                    width: (23/@rem);
+                    padding: 0;
+                }
+
+                &[type="search"] {
+                    border-radius: 0;
+                    appearance: none;
+                }
+
+            }
+
+            label {
+                display: block;
+                cursor: pointer;
+                margin: 0 0 (5/@rem);
+
+                &:hover {
+                    color: @black;
+                }
+            }
+
+    /*--------------------------------------------------*/
+    /* Placeholder                                      */
+
+        .placeholder(@color: @s180){
+            ::-webkit-input-placeholder {
+                color: @color;
+            }
+            ::-moz-placeholder {
+                color: @color;
+            }
+            :-ms-input-placeholder {
+                color: @color;
+            }
+            :-moz-placeholder {
+                color: @color;
+            }
+        }
+
+        .placeholder();
+
+    /*--------------------------------------------------*/
+    /* Row                                              */
+
+        .row {
+            margin: 0 0 @rowMargin;
+            max-width: (400/@rem);
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+
+        /*--------------------------------------------------*/
+        /* Row Loading                                      */
+
+            .js-loading {
+                position: relative;
+
+                .mod-indicator-loader {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin: -(20/@rem);
+                    z-index: 1;
+                }
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -(10/@rem);
+                    left: -(5/@rem);
+                    width: calc(~'100% + 10px');
+                    height: calc(~'100% + 20px');
+                    cursor: progress;
+                    background: @s240;
+                    opacity: .3;
+
+                }
+
+            } //.js-loading
+
+        /*--------------------------------------------------*/
+        /* Fields                                           */
+
+            .field {
+                width: 100%;
+
+                .btn {
+                    margin: 0;
+                    padding: (5/@rem) (20/@rem);
+                }
+            }
+
+            /*--------------------------------------------------*/
+            /* Field with button                                */
+
+                .field-btn {
+                    display: flex;
+
+                    > :first-child {
+                        border-top-right-radius: 0 ;
+                        border-bottom-right-radius: 0 ;
+                    }
+
+                    .btn {
+                        width: auto;
+                        border-top-left-radius: 0 ;
+                        border-bottom-left-radius: 0 ;
+                    }
+                }
+
+            /*--------------------------------------------------*/
+            /* Field with multiple inputs                       */
+
+                .field-multiple {
+                    display: flex;
+
+                    > * {
+                        flex-grow: 1;
+                        min-width: 0;
+
+                        &:not(:first-child) {
+                            margin-left: (5/@rem);
+                        }
+                    }
+                }
+
+        /*--------------------------------------------------*/
+        /* Select                                           */
+
+            select {
+                appearance: none;
+                /* note:
+                for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+                */
+                background-image: url("@{svg}/sprites/chevron-down.svg");
+                background-repeat: no-repeat, repeat;
+                /* arrow icon position (1em from the right, 50% vertical) */
+                background-position: right .7em top 50%;
+                /* icon size, then gradient */
+                background-size: .65em auto, 100%;
+                color: inherit;
+
+                /* Hide arrow icon in IE browsers */
+                &:-ms-expand {
+                	display: none;
+                }
+
+                /* Focus style */
+                &:focus {
+                	border-color: #aaa;
+                	/* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+                	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+                	box-shadow: 0 0 0 3px -moz-mac-focusring;
+                	color: #222;
+                	outline: none;
+                }
+            }
+
+        /*--------------------------------------------------*/
+        /* Shared Checkboxes + Radio                        */
+
+            .checkbox,
+            .radio {
+
+                input {
+                    .off-screen();
+                }
+
+                label {
+                    position: relative;
+                    padding-left: (30/@rem);
+                    margin: (5/@rem) 0;
+
+                    &:before,
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: (20/@rem);
+                        height: (20/@rem);
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+
+                    &:before {
+                        background: @white;
+                        border: @fieldBorder;
+                    }
+
+                    &:after {
+                        width: (10/@rem);
+                        height: (10/@rem);
+                        // background: @primary;
+                        left: (5/@rem);
+                        opacity: 0;
+                        transition: @speed all;
+                    }
+
+                }
+
+                /*--------------------------------------------------*/
+                /* Checked                                          */
+
+                    input[type="checkbox"]:checked + label,
+                    input[type="radio"]:checked + label {
+
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+
+                /*--------------------------------------------------*/
+                /* Disabled                                         */
+
+                    input[type="checkbox"]:disabled + label,
+                    input[type="radio"]:disabled + label {
+                        cursor: not-allowed;
+                        color: @s120;
+
+                        &:before {
+                            border: solid 1px red;
+                        }
+
+                        &:after {
+                            height: (1/@rem);
+                            width: (8/@rem);
+                            left: (6/@rem);
+                            background: red;
+                            transform: rotate(45deg);
+                            opacity: 1;
+                        }
+                    }
+            } // .checkbox / .radio
+
+        /*--------------------------------------------------*/
+        /* Radio Specific                                   */
+
+            .radio label {
+
+                &:before,
+                &:after {
+                    border-radius: 50%;
+                }
+
+            }
+
+        /*--------------------------------------------------*/
+        /* Textarea                                         */
+
+            textarea {
+                width: 100%;
+                max-width: 100%;
+            }
+
+        /*--------------------------------------------------*/
+        /* Helper Text                                      */
+
+            .row small {
+                font-size: (12/@rem);
+                display: block;
+                color: @s140;
+                margin: (5/@rem) 0;
+            }
+
+        /*--------------------------------------------------*/
+        /* Error                                            */
+
+            .error {
+
+                label {
+                    color: red;
+                }
+
+                input,
+                select,
+                textarea {
+                    border-color: red;
+                }
+
+            } //.error
+
+            /*--------------------------------------------------*/
+            /* Message                                           */
+
+                .message {
+                    margin-top: (4/@rem);
+                    padding: (10/@rem);
+                    background: @s250;
+
+                    .error & {
+                        background: fade(red,10%);
+                        color: red;
+                        padding-left: (40/@rem);
+                        border-radius: @radius @radius;
+                        position: relative;
+
+                        &:after {
+                            content: '\00D7';
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            left: (10/@rem);
+                            top: 50%;
+                            transform: translateY(-50%);
+                            color: red;
+                            background: @white;
+                            width: (20/@rem);
+                            height: (20/@rem);
+                            border-radius: 50%;
+                            font-weight: @bold;;
+                        }
+                    }
+                }

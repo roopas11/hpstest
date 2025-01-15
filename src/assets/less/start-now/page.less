@@ -1,0 +1,39 @@
+/*--------------------------------------------------*/
+/* Import                                           */
+
+    @import "../_global/_variables.less";
+
+/*--------------------------------------------------*/
+/* Contact                                          */
+
+    .hero {
+        overflow: hidden;
+
+        .main-blur {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220%;
+            height: auto;
+
+            img {
+                max-width: none;
+            }
+        }
+
+        /*--------------------------------------------------*/
+        /* Min @bp-medium                                   */
+        
+        @media (min-width: (@bp-medium)) {
+
+            & {
+                min-height: (680/@rem);
+            }
+
+            .main-blur {
+                width: 160%;
+            }
+            
+        } // @media min @bp-medium
+    }

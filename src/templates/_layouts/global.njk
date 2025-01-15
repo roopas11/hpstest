@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        {% if title %}
+            <title>
+                {{ title }}
+            </title>
+        {% endif %}
+        {% set version = "1.2" %}
+        <link rel="canonical" href="https://www.hpsbraingym.com{% if canonUrl %}{{ canonUrl }}{% endif %}" />
+        {% if env.environment == 'dev' %}
+            <meta name="robots" content="noindex,nofollow">
+            <meta name="google-site-verification" content="1huY3wAm9AwUowbgX6cCUkAyV9-ApEAY3zMXAfVzwZg" />
+        {% else %}
+            <meta name="google-site-verification" content="ogoYaLsBOXXQILGljH_zRVYA0rZ-GfGXVl5awt2ZnNY" />
+        {% endif %}
+        {% if description %}
+            <meta name="description" content="{{ description }}">
+        {% endif %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/_assets/img/_global/favicon.ico">
+
+        <!-- META - OG -->
+        <meta property="og:site_name" content="HPS Brain Gym™">
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:url" content="hpsbraingym.com">
+        <meta property="og:image" content="/_assets/img/_global/social.jpg">
+
+        <!-- META - TWITTER -->
+        <meta name="twitter:site" content="hpsbraingym.com">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:image" content="/_assets/img/_global/social.jpg">
+
+        <link rel="stylesheet" type="text/css" href="/_assets/css/_global/global.css?v={{ version }}">
+        {% block css %}
+            {{css | safe}}
+        {% endblock %}
+
+        <!-- Google Tag Manager -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments)};
+
+            (function(w,d,s,l,i){
+            w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NVKRMG2Z');
+        </script>
+        <!-- End Google Tag Manager -->
+    </head>
+    <body class="js-disabled">
+        {% import '../_includes/_macros/macros.njk' as macros %}
+
+        {% include "_layout/header.njk" %}
+
+        <div class="content">
+            {% block content %}
+                {{ content | safe }}
+            {% endblock %}
+        </div>
+
+        {% include "_layout/footer.njk" %}
+        {% include "_layout/cookies.njk" %}
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+        {# Environment specific scripts #}
+        {% if env.environment == 'dev' %}
+            {# Non bundled for dev #}
+            <script src="/_assets/js/_vendor/lenis.min.js" defer></script>
+            <script src="/_assets/js/_global/global.js" defer></script>
+        {% else %}
+            {# Bundled for production #}
+            <script src="/_assets/js/_global/bundle.js?v={{ version }}" defer></script>
+        {% endif %}
+
+        {% block js %}
+            {{ js | safe}}
+        {% endblock %}
+    </body>
+</html>

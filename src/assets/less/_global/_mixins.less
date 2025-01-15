@@ -1,0 +1,64 @@
+/*--------------------------------------------------*/
+/* Global mixins                                    */
+
+    @import "_variables.less";
+
+/*--------------------------------------------------*/
+/* Display                                          */
+
+    .off-screen {
+        position: absolute;
+        left: -5000em;
+        clip: rect(0 0 0 0);
+    }
+
+    .on-screen {
+        position: static;
+        left: auto;
+        clip: auto;
+    }
+
+    .unfloat {
+        float: none;
+        width: auto;
+    }
+
+    /*--------------------------------------------------*/
+    /* Clearfix (HTML)                                  */
+
+        .clear:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+    /*--------------------------------------------------*/
+    /* Clearfix (CSS)                                   */
+
+        .clearfix() {
+            &:after {
+                content: "";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+        }
+
+/*--------------------------------------------------*/
+/* White Background sections                        */
+
+        .bg-white(){
+            background: @white;
+            color: var(--gray);
+
+            h1,h2,h3,h4,h5,h6 {
+                color: var(--black);
+            }
+
+            a:not(.btn) {
+                color: var(--blue);
+            }
+        }
